@@ -61,4 +61,15 @@ public class Coordinate {
     public void setHitbox(Rectangle newBox) {hitbox = newBox;}
     public void setHitbox_X(int newX) {hitbox.x = newX;}
     public void setHitbox_Y(int newY) {hitbox.y = newY;}
+    
+    public void moveAllX(int dX) {
+        trueX += dX;
+        renderX += dX;
+        hitbox.x += dX;
+    }
+    public void moveAllY(int dY) {
+        trueY += dY;
+        renderY += dY;
+        hitbox.y += dY;
+    }
 }

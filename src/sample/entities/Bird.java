@@ -7,6 +7,7 @@ package sample.entities;
 
 //--- IMPORTS ---//
 import framework.Entity;
+import java.util.ArrayList;
 
 public class Bird extends Entity{
     
@@ -14,24 +15,40 @@ public class Bird extends Entity{
     
     //--- CONSTRUCTOR ---//
     public Bird(int x, int y) {
-        super("flappy:bird", x, y, 50, 50);
+        super("flappy_bird", x, y, 50, 50);
         this.left = this.right = this.up = this.down = false;
     }
     
     //--- MAIN SET FUNCTION ---//
     public void set() {
-        if (left) {
-            coordinate.moveRenderX(-2);
+        
+        //Collidables
+        
+        //Pipe Collision
+        boolean colliding = false;
+        for (int i=0;i<Entity.getEntitiesByType("pipe_obstacle").size();i++) { //TO-DO: adjust based on collision logic
+            if(this.collidesWith(Entity.getEntitiesByType("pipe_obstacle").get(i))) {
+                System.out.println("im colliding");
+                colliding = true;
+                break;
+            } else{}
         }
-        if (right) {
-            coordinate.moveRenderX(2);
+        
+        if(!colliding) {
+            if (left) {
+                coordinate.moveAllX(-2);
+            }
+            if (right) {
+                coordinate.moveAllX(2);
+            }
+            if (up) {
+                coordinate.moveAllY(-2);
+            }
+            if (down) {
+                coordinate.moveAllY(2);
+            }
         }
-        if (up) {
-            coordinate.moveRenderY(-2);
-        }
-        if (down) {
-            coordinate.moveRenderY(2);
-        }
+        
     }
     
     //--- GETTERS ---//
