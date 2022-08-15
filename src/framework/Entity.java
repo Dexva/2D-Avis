@@ -25,6 +25,8 @@ public class Entity {
     private Color entityColor;
     private int drawMode;
     
+    private int speedX = 0, speedY = 0;
+    
     private static ArrayList<Entity> entities = new ArrayList<Entity>();
     
     public Entity(String id, int x, int y, int w, int h) {
@@ -46,7 +48,7 @@ public class Entity {
         gtd.setColor(entityColor);
         switch(drawMode) {
             case DRAW_MODE_RECTANGLE:
-                gtd.fillRect(coordinate.getRenderX(), coordinate.getRenderY(), coordinate.getWidth(), coordinate.getHeight());
+                gtd.fillRect((int) coordinate.getRenderX(), (int) coordinate.getRenderY(), coordinate.getWidth(), coordinate.getHeight());
                 break;
             default:
                 break;
@@ -64,6 +66,7 @@ public class Entity {
         } 
         else {return false;}
     }
+    
     
     //--- CLASS FUNCTIONS (STATIC) ---//
     public static void drawAllEntities(Graphics2D gtd) {

@@ -11,32 +11,32 @@ import java.util.ArrayList;
 
 public class Coordinate {
     
-    private int trueX, trueY;
-    private int firstX, firstY;
-    private int renderX, renderY;
+    private double trueX, trueY;
+    private double firstX, firstY;
+    private double renderX, renderY;
     private int width, height;
     private Rectangle hitbox;
     
     private ArrayList<Coordinate> coordinates = new ArrayList<Coordinate>();
 
     //--- CONSTRUCTORS ---//
-    public Coordinate(int tX, int tY, int w, int h) {
+    public Coordinate(double tX, double tY, int w, int h) {
         this.trueX = this.firstX = this.renderX = tX;
-        this.trueY = this.firstY = this.renderY = tX;
+        this.trueY = this.firstY = this.renderY = tY;
         this.width = w;
         this.height = h;
-        hitbox = new Rectangle(trueX, trueY, width, height);
+        hitbox = new Rectangle((int) trueX, (int) trueY, (int) width, (int) height);
         
         coordinates.add(this);
     }
     
     //--- GETTERS ---//
-    public int getTrueX() {return trueX;}
-    public int getTrueY() {return trueY;}
-    public int getFirstX() {return firstX;}
-    public int getFirstY() {return firstY;}
-    public int getRenderX() {return renderX;}
-    public int getRenderY() {return renderY;}
+    public double getTrueX() {return trueX;}
+    public double getTrueY() {return trueY;}
+    public double getFirstX() {return firstX;}
+    public double getFirstY() {return firstY;}
+    public double getRenderX() {return renderX;}
+    public double getRenderY() {return renderY;}
     public int getWidth() {return width;}
     public int getHeight() {return height;}
     public Rectangle getHitbox() {return hitbox;}
@@ -46,30 +46,30 @@ public class Coordinate {
     public int getHitbox_HEIGHT() {return hitbox.height;}
     
     //--- FUNCTIONS/SETTERS ---//
-    public void setTrueX(int newX) {trueX = newX;}
-    public void setTrueY(int newY) {trueY = newY;}
-    public void moveTrueX(int dX) {trueX += dX;}
-    public void moveTrueY(int dY) {trueY += dY;}
+    public void setTrueX(double newX) {trueX = newX; hitbox.x = (int) trueX;}
+    public void setTrueY(double newY) {trueY = newY; hitbox.y = (int) trueY;}
+    public void moveTrueX(double dX) {trueX += dX; hitbox.x = (int) trueX;}
+    public void moveTrueY(double dY) {trueY += dY; hitbox.y = (int) trueY;}
     
-    public void setRenderX(int newX) {renderX = newX;}
-    public void setRenderY(int newY) {renderY = newY;}
-    public void moveRenderX(int dX) {renderX += dX;}
-    public void moveRenderY(int dY) {renderY += dY;}
-    public void cameraAdjustRenderX(int cX) {renderY = trueX - cX;}
-    public void cameraAdjustRenderY(int cY) {renderY = trueX - cY;}
+    public void setRenderX(double newX) {renderX = newX;}
+    public void setRenderY(double newY) {renderY = newY;}
+    public void moveRenderX(double dX) {renderX += dX;}
+    public void moveRenderY(double dY) {renderY += dY;}
+    public void cameraAdjustRenderX(double cX) {renderY = trueX - cX;}
+    public void cameraAdjustRenderY(double cY) {renderY = trueX - cY;}
     
     public void setHitbox(Rectangle newBox) {hitbox = newBox;}
     public void setHitbox_X(int newX) {hitbox.x = newX;}
     public void setHitbox_Y(int newY) {hitbox.y = newY;}
     
-    public void moveAllX(int dX) {
+    public void moveAllX(double dX) {
         trueX += dX;
         renderX += dX;
-        hitbox.x += dX;
+        hitbox.x = (int) trueX;
     }
-    public void moveAllY(int dY) {
+    public void moveAllY(double dY) {
         trueY += dY;
         renderY += dY;
-        hitbox.y += dY;
+        hitbox.y = (int) trueY;
     }
 }

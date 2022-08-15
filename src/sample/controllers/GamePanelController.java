@@ -32,44 +32,12 @@ public class GamePanelController extends Controller implements KeyListener, Mous
 
     @Override
     public void keyPressed(KeyEvent e) {
-        char key = e.getKeyChar();
-        switch(key) {
-             case 'w':
-                panel.player.up = true;
-                break;
-            case 'a':
-                panel.player.left = true;
-                break;
-            case 's':
-                panel.player.down = true;
-                break;
-            case 'd':
-                panel.player.right = true;
-                break;
-            default:
-                break;
-        }
+        if (e.getKeyCode()==KeyEvent.VK_SPACE) panel.player.jump = true;
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-        char key = e.getKeyChar();
-        switch(key) {
-             case 'w':
-                panel.player.up = false;
-                break;
-            case 'a':
-                panel.player.left = false;
-                break;
-            case 's':
-                panel.player.down = false;
-                break;
-            case 'd':
-                panel.player.right = false;
-                break;
-            default:
-                break;
-        }
+        if (e.getKeyCode()==KeyEvent.VK_SPACE) panel.player.jump = false;
     }
 
     //--- MOUSE CONTROLS ---//

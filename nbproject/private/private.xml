@@ -5,10 +5,11 @@
         <group>
             <file>file:/Users/davisnicholomagpantay/Documents/Techventures/2D-Avis%20(Local)/src/framework/Entity.java</file>
             <file>file:/Users/davisnicholomagpantay/Documents/Techventures/2D-Avis%20(Local)/src/sample/SampleMain.java</file>
+            <file>file:/Users/davisnicholomagpantay/Documents/Techventures/2D-Avis%20(Local)/src/sample/entities/Pipe.java</file>
             <file>file:/Users/davisnicholomagpantay/Documents/Techventures/2D-Avis%20(Local)/src/sample/screens/GamePanel.java</file>
-            <file>file:/Users/davisnicholomagpantay/Documents/Techventures/2D-Avis%20(Local)/src/framework/Game.java</file>
-            <file>file:/Users/davisnicholomagpantay/Documents/Techventures/2D-Avis%20(Local)/README.md</file>
-            <file>file:/Users/davisnicholomagpantay/Documents/Techventures/2D-Avis%20(Local)/src/framework/Panel.java</file>
+            <file>file:/Users/davisnicholomagpantay/Documents/Techventures/2D-Avis%20(Local)/src/sample/entities/Bird.java</file>
+            <file>file:/Users/davisnicholomagpantay/Documents/Techventures/2D-Avis%20(Local)/src/framework/Coordinate.java</file>
+            <file>file:/Users/davisnicholomagpantay/Documents/Techventures/2D-Avis%20(Local)/src/framework/dependencies/CollisionData.java</file>
             <file>file:/Users/davisnicholomagpantay/Documents/Techventures/2D-Avis%20(Local)/src/framework/Controller.java</file>
         </group>
     </open-files>

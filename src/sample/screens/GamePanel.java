@@ -61,8 +61,8 @@ public class GamePanel extends Panel{
     }
     
     public void initializeGame() {
-        player = new Bird(100, 100);
-        new Pipe(200, 200);
+        player = new Bird(250, 0);
+        new Pipe(250, 500);
         new Pipe(50, 300);
     }
     
